@@ -1,7 +1,7 @@
 import { globals } from '../configs/globals.js';
 
 // =====================
-// 路由请求相关
+// 日志记录工具
 // =====================
 
 export function log(level, ...args) {
@@ -30,7 +30,7 @@ export function log(level, ...args) {
 
   // 获取上海时区时间(UTC+8)
   const now = new Date();
-  const shanghaiTime = new Date(now.getTime() + (8 * 60 * 1000));
+  const shanghaiTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
   const timestamp = shanghaiTime.toISOString().replace('Z', '+08:00');
 
   globals.logBuffer.push({ timestamp, level, message });
